@@ -1,0 +1,6 @@
+version: "3.7"
+
+services:
+
+#  front:
+#    image: igor368/parking-app-angular:prod
