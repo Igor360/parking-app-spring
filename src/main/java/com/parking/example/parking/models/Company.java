@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Table(name = "companies")
@@ -48,4 +49,15 @@ public class Company {
     @Getter
     @Column(name = "contact_phone")
     private String contactPhone;
+
+    @Getter
+    @Setter
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @Getter
+    @Setter
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = CompanyParking.class, mappedBy = "company")
+    private List<CompanyParking> parking;
 }

@@ -25,4 +25,10 @@ public class ParkingPricing {
     @Getter
     @Setter
     private Float price;
+
+    @Getter
+    @Setter
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "position_id")
+    private ParkingPosition position;
 }

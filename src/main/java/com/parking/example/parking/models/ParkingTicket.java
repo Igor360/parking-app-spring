@@ -29,4 +29,19 @@ public class ParkingTicket {
     @Setter
     private Timestamp validTo;
 
+    @Getter
+    @Setter
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id")
+    private Client client;
+
+    @Getter
+    @Setter
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "position_id")
+    private ParkingPosition position;
+
+    @Getter
+    @Setter
+    private Double price;
 }

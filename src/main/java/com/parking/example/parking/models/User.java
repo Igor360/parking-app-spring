@@ -61,4 +61,20 @@ public class User {
     @Setter
     @OneToMany(fetch = FetchType.EAGER, targetEntity = Client.class, mappedBy = "user")
     private List<Client> clientProfiles;
+
+
+    @Getter
+    @Setter
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = Car.class, mappedBy = "user")
+    private List<Car> cars;
+
+    @Getter
+    @Setter
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = Cars.class, mappedBy = "user")
+    private List<Cars> carsGroups;
+
+    @Getter
+    @Setter
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = Company.class, mappedBy = "user")
+    private List<Company> companies;
 }

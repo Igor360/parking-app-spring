@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "clients")
@@ -51,4 +52,9 @@ public class Client {
         this.docNumber = docNumber;
         this.phone = phone;
     }
+
+    @Getter
+    @Setter
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = ParkingTicket.class, mappedBy = "client")
+    private List<ParkingTicket> tickets;
 }
