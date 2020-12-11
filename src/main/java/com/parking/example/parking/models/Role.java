@@ -2,12 +2,14 @@ package com.parking.example.parking.models;
 
 import com.parking.example.parking.models.enums.ERole;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
+@NoArgsConstructor
 public class Role {
 
     @Getter

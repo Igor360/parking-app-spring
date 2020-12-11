@@ -1,6 +1,7 @@
 package com.parking.example.parking.models;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.List;
         @UniqueConstraint(columnNames = "username"),
         @UniqueConstraint(columnNames = "email")
 })
+@NoArgsConstructor
 public class User {
 
     @Getter
@@ -53,28 +55,24 @@ public class User {
         this.password = password;
     }
 
-    public User() {
-        super();
-    }
-
     @Getter
     @Setter
-    @OneToMany(fetch = FetchType.EAGER, targetEntity = Client.class, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = Client.class, mappedBy = "user")
     private List<Client> clientProfiles;
 
 
     @Getter
     @Setter
-    @OneToMany(fetch = FetchType.EAGER, targetEntity = Car.class, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = Car.class, mappedBy = "user")
     private List<Car> cars;
 
     @Getter
     @Setter
-    @OneToMany(fetch = FetchType.EAGER, targetEntity = Cars.class, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = Cars.class, mappedBy = "user")
     private List<Cars> carsGroups;
 
     @Getter
     @Setter
-    @OneToMany(fetch = FetchType.EAGER, targetEntity = Company.class, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, targetEntity = Company.class, mappedBy = "user")
     private List<Company> companies;
 }

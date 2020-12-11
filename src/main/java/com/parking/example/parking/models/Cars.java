@@ -1,6 +1,7 @@
 package com.parking.example.parking.models;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,6 +10,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "user_cars")
+@NoArgsConstructor
 public class Cars {
 
     @Getter

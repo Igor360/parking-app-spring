@@ -2,6 +2,7 @@ package com.parking.example.parking.models;
 
 import com.parking.example.parking.models.enums.ECarType;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "cars")
+@NoArgsConstructor
 public class Car {
 
     @Getter

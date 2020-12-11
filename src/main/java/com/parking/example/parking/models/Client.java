@@ -1,14 +1,15 @@
 package com.parking.example.parking.models;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "clients")
+@NoArgsConstructor
 public class Client {
 
     @Setter
@@ -41,10 +42,6 @@ public class Client {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
-
-    public Client() {
-        super();
-    }
 
     public Client(String firstName, String lastName, String docNumber, String phone) {
         this.firstName = firstName;
